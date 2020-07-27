@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./App.css";
+import "./styles.css";
+import SignIn from "./components/signin";
+import Register from "./components/register";
+import Home from "./components/home";
+
+const App = () => {
+  const [route, setRoute] = useState("signUp");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    role: "customer",
+  });
+
+  const currentView = () => {
+    switch (route) {
+      case "signUp":
+        return <Register setRoute={setRoute} user={user} setUser={setUser} />;
+      case "logIn":
+        return <SignIn setRoute={setRoute} user={user} setUser={setUser} />;
+      case "home":
+        return <Home />;
+      default:
+        break;
+    }
+  };
+  return <section id="entry-page">{currentView()}</section>;
+};
 
 export default App;
