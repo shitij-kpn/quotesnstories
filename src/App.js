@@ -11,7 +11,7 @@ const App = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
-    role: "customer",
+    role: "admin",
   });
 
   const currentView = () => {

@@ -26,10 +26,10 @@ function Home({user,setUser}) {
     }
     return (
         <div className="container">
-            <button className="buttons" value="customer" onClick={handleClick}>
+            <button className="buttons" value="admin" onClick={(e) => handleClick(e)}>
                 AccessRedButton
             </button>
-            <button className="buttons" value="admin" onClick={handleClick}>
+            <button className="buttons" value="customer" onClick={(e) => handleClick(e)}>
                 AccessGreenButton
             </button> 
             <button className="buttons" id="green" ></button>
