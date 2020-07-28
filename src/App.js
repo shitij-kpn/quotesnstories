@@ -21,7 +21,7 @@ const App = () => {
       case "logIn":
         return <SignIn setRoute={setRoute} user={user} setUser={setUser} />;
       case "home":
-        return <Home />;
+        return <Home user={user} setUser={setUser} />;
       default:
         break;
     }

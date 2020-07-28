@@ -13,9 +13,10 @@ const SignIn = ({ user, setUser, setRoute }) => {
     })
       .then((response) => response.json())
       .then((verified) => {
-        console.log(verified);
         if (verified.email) {
           setRoute("home");
+        } else {
+          alert(verified.message);
         }
       });
   };

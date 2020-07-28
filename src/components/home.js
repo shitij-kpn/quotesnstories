@@ -1,10 +1,40 @@
 import React from 'react'
 
-function Home() {
+function Home({user,setUser}) {
+    const handleClick = (e) => {
+        const newRole = e.target.value;
+        fetch("http://127.0.0.1:5000/update",{
+            method: "patch",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: user.email,
+                role: newRole,
+            }),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log('updated role');
+            setUser({
+                ...user,
+                role:newRole,
+            })
+        })
+        .catch = (err) => {
+            console.error(err);
+        }
+        
+    }
     return (
-        <h1>
-            THIS IS THE HOME PAGE
-        </h1>
+        <div className="container">
+            <button className="buttons" value="customer" onClick={handleClick}>
+                AccessRedButton
+            </button>
+            <button className="buttons" value="admin" onClick={handleClick}>
+                AccessGreenButton
+            </button> 
+            <button className="buttons" id="green" ></button>
+            {user.role === 'admin' ? <button className="buttons" id="red" ></button> : undefined}
+        </div>
     )
 }
 

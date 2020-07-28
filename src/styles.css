@@ -16,7 +16,7 @@ h6,
 p {
   margin: 0;
 }
-section#entry-page {
+#entry-page {
   display: grid;
   grid-template-columns: 1fr minmax(200px, 400px) 1fr;
   grid-template-rows: 1fr minmax(auto, 1fr) 1fr;
@@ -28,7 +28,7 @@ section#entry-page {
   animation: Gradient 15s ease infinite;
   box-sizing: border-box;
 }
-section#entry-page form {
+#entry-page form {
   grid-column: 2;
   grid-row: 2;
   display: grid;
@@ -39,52 +39,52 @@ section#entry-page form {
   border-radius: 10px;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2);
 }
-section#entry-page form h2 {
+#entry-page form h2 {
   margin-bottom: 5px;
   text-align: center;
   text-shadow: 0 4px 16px #fff;
   font-size: 30px;
   font-weight: 100;
 }
-section#entry-page form fieldset {
+#entry-page form fieldset {
   margin: 0;
   background-color: #fff;
   border: none;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-section#entry-page form fieldset legend {
+#entry-page form fieldset legend {
   padding: 5px;
   background-color: #fff;
   border-radius: 5px;
 }
-section#entry-page form fieldset ul {
+#entry-page form fieldset ul {
   margin: 0;
   padding: 0;
 }
-section#entry-page form fieldset ul li {
+#entry-page form fieldset ul li {
   display: grid;
   align-items: center;
   margin: 10px;
 }
-section#entry-page form fieldset ul li a {
+#entry-page form fieldset ul li a {
   color: #02c;
 }
-section#entry-page form fieldset ul li em {
+#entry-page form fieldset ul li em {
   grid-column: span 2;
   text-align: center;
   padding: 5px;
 }
-section#entry-page form fieldset ul li label {
+#entry-page form fieldset ul li label {
   text-align: left;
   padding-bottom: 2px;
 }
-section#entry-page form fieldset ul li input {
+#entry-page form fieldset ul li input {
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-section#entry-page form fieldset ul li input:hover {
+#entry-page form fieldset ul li input:hover {
   border: 1px solid #aaf;
 }
 
@@ -99,14 +99,14 @@ option {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-section#entry-page form button {
+#entry-page form button {
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
-section#entry-page form button:hover {
+#entry-page form button:hover {
   background-color: #eef;
   border: 1px solid #aaf;
 }
@@ -133,4 +133,39 @@ section#entry-page form button:hover {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.buttons {
+  padding: 5px;
+  margin: 5px 10px;
+  border: 0px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.buttons:active {
+  transform: translateY(2px);
+}
+
+#green {
+  background-color: green;
+  width: 50px;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#red {
+  background-color: red;
+  width: 50px;
+  border: 2px solid rgb(255, 255, 255);
 }

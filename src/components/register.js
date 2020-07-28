@@ -15,11 +15,7 @@ const Register = ({ user, setUser, setRoute }) => {
       .then((res) => res.json())
       .then((verified) => {
         console.log(verified);
-        if (verified.email) {
-          setUser({
-            ...user,
-            verified,
-          });
+        if (verified.status) {
           setRoute("home");
         }
       });
@@ -30,7 +26,6 @@ const Register = ({ user, setUser, setRoute }) => {
       ...user,
       email: value,
     });
-    console.log(e.target);
   };
   const setPassword = (e) => {
     const value = e.target.value;
